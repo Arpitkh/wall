@@ -1,0 +1,54 @@
+body{
+    background: white url('images/background.jpg');
+}
+
+.card{
+    height: 488px;
+}
+
+.navbar{
+    overflow:hidden;
+    background-image: url("images/sidebar.png");
+}
+
+.side-nav{
+    height:100%;
+    width:0;
+    position:fixed;
+    z-index:1;
+    left:0;
+    background-image: url("images/sidebar.png");
+    overflow-x:hidden;
+    padding-top: 50px;
+    transition: 0.5s;
+
+}
+
+.side-nav a{
+    padding:10px 10px 10px 30px;
+    text-decoration:none !important;
+    font-size:18px;
+    color:darkslategrey;
+    display:block;
+    transition: 0.3s;
+}
+
+.side-nav a:hover {
+    color: skyblue;
+}
+
+.side-nav .btn-close{
+    position:absolute;
+    top:-20px;
+    right:-2px;
+    font-size:30px;
+    margin-left:50px;
+}
+
+#main{
+    transition:margin-left 0.5s;
+    padding:20px;
+    overflow:hidden;
+    width:100%;
+}
+

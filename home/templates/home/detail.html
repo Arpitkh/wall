@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+{% load staticfiles %}
+
+{% block body %}
+    <img src="{{ item.item_img.url }}" class="img-fluid rounded float-left ml-5 mt-5 border border-info bg-light" alt="Woops" width="500" height="500">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg ">
+                 <div class="card my-card">
+                     <h4 class="card-header">{{ item.item_name }}</h4>
+                     <h5 class="card-header text-secondary">by {{ item.company }}</h5>
+                      <div class="card-body">
+                          <h5 class="card-title text-success">₹{{ item.item_price }}<br></h5>
+                        <p class="card-text">{{ item.item_details }}</p>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

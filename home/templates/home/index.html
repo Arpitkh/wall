@@ -1,0 +1,54 @@
+{% extends 'home/base.html' %}
+{% load staticfiles %}
+
+
+{% block body %}
+    <div id="side-menu" class="side-nav">
+        <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+        <a href="#">blah</a>
+        <a href="#">blah</a>
+        <a href="#">blah</a>
+        </div>
+
+    <script>
+        function openSlideMenu(){
+            document.getElementById('side-menu').style.width = '200px';
+
+            document.getElementById('main').style.marginLeft = '200px';
+        }
+
+         function closeSlideMenu(){
+            document.getElementById('side-menu').style.width = '0px';
+
+            document.getElementById('main').style.marginLeft = '0px';
+        }
+    </script>
+
+    <div id="main">
+
+
+
+    {% if all_items %}
+        <ul>
+             <div class="card-deck">
+                {% for item in all_items %}
+                    <li>
+                        <div class="card border-info shadow-sm my-card mt-5" style="width: 18rem;">
+                            <div class="card-body">
+                                <img class="card-img-top" src="{{ item.item_img.url }}" alt="Aw Shit" >
+                                <h5 class="card-title">{{ item.item_name }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">by {{ item.company }}</h6>
+                                <p class="card-text text-success">₹{{ item.item_price }}</p>
+                                <a href="/{{ item.id }}/" class="btn btn-primary">Buy</a>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+             </div>
+        </ul>
+    </div>
+    {% else %}
+        <h3>Dang, there's nothing here!</h3>
+    {% endif %}
+{% endblock %}
+
