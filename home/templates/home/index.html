@@ -39,7 +39,7 @@
                                 <h5 class="card-title">{{ item.item_name }}</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">by {{ item.company }}</h6>
                                 <p class="card-text text-success">₹{{ item.item_price }}</p>
-                                <a href="/{{ item.id }}/" class="btn btn-primary">Buy</a>
+                                <a href="/{{ item.id }}/" class="btn btn-primary">Learn More</a>
                             </div>
                         </div>
                     </li>
@@ -48,7 +48,14 @@
         </ul>
     </div>
     {% else %}
-        <h3>Dang, there's nothing here!</h3>
+        <div class="row">
+            <div class="col-3">
+                <img src="{% static 'home/images/noreply.png' %}" height="600">
+            </div>
+            <div class="col-9">
+               <h1 class="display-1 text-light mt-5 ml-4">Dang! There's Nothing Here.</h1>
+            </div>
+        </div>
     {% endif %}
 {% endblock %}
 
