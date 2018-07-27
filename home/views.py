@@ -16,6 +16,7 @@ def search(request):
     searched_item = request.POST.get('textfield')
     searched_item_words = searched_item.split()
     list = []
+    var = 0
     for item in all_items:
         count = 0
         item_name = item.item_name
@@ -27,7 +28,12 @@ def search(request):
             for sword in searched_item_words:
                 if word.lower() == sword.lower():
                     count += 1
+
         if count > 0:
-            list.append(item)
+            if count >= var:
+                list.insert(0, item)
+            else:
+                list.append(item)
+            var = count
 
     return render(request, 'home/index.html', {"reqd_items": list})
